@@ -1,3 +1,6 @@
+#Use this when running FastAPI locally on VS Code, Termux, or Linux (clean and minimal)
+
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 
