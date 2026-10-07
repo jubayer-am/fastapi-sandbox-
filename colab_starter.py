@@ -1,3 +1,5 @@
+#Use this whenever you practice inside Google Colab (includes the tunnel hacks)
+
 import nest_asyncio, uvicorn, asyncio, subprocess, time
 from fastapi import FastAPI
 from pydantic import BaseModel
