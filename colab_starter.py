@@ -26,18 +26,18 @@ class TodoItem(BaseModel):
     completed: bool = False
 
 # Routes
-@app.get("/")
+@app.get("/") #Read / Retrieve data from the server
 def read_root():
     return {"message": "Hello from Colab!"}
 
-@app.post("/todos/{item_id}", status_code=201)
+@app.post("/todos/{item_id}", status_code=201) #Create / Send new data to the server.
 def create_todo(item_id: int, item: TodoItem):
     if item_id in todo_db:
         raise HTTPException(status_code=400, detail="Item already exists")
     todo_db[item_id] = item
     return {"status": "success", "data": item}
 
-@app.get("/todos/{item_id}")
+@app.get("/todos/{item_id}") 
 def get_todo(item_id: int):
     if item_id not in todo_db:
         raise HTTPException(status_code=404, detail="Item not found")
